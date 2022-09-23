@@ -1,0 +1,19 @@
+{
+   "folders": [
+      {
+         "path": "."
+      }
+   ],
+   "settings": {
+      "typescript.tsc.autoDetect": "off",
+      "foam.edit.linkReferenceDefinitions": "withExtensions",
+      "foam.files.ignore": [
+         "**/.vscode/**/*",
+         "**/_layouts/**/*",
+         "**/_site/**/*",
+         "**/node_modules/**/*",
+         "packages/**/*"
+      ],
+      "search.mode": "reuseEditor"
+   }
+}
