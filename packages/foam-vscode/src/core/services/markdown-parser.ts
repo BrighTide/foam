@@ -4,7 +4,6 @@ import unified from 'unified';
 import markdownParse from 'remark-parse';
 import wikiLinkPlugin from 'remark-wiki-link';
 import frontmatterPlugin from 'remark-frontmatter';
-import remarkDisableBlocks from 'remark-disable-tokenizers';
 import { parse as parseYAML } from 'yaml';
 import visit from 'unist-util-visit';
 import { NoteLinkDefinition, Resource, ResourceParser } from '../model/note';
@@ -50,6 +49,10 @@ export function createMarkdownParser(
     .use(markdownParse, { gfm: true })
     .use(frontmatterPlugin, ['yaml'])
     .use(wikiLinkPlugin, { aliasDivider: '|' });
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
+  delete markdownParse.Parser.prototype.blockTokenizers.indentedCode;
 
   const plugins = [
     titlePlugin,
