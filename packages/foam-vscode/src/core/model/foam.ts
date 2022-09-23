@@ -4,7 +4,6 @@ import { FoamWorkspace } from './workspace';
 import { FoamGraph } from './graph';
 import { ResourceParser } from './note';
 import { ResourceProvider } from './provider';
-import { createMarkdownParser } from '../services/markdown-parser';
 import { FoamTags } from './tags';
 import { Logger } from '../utils/log';
 
@@ -24,9 +23,9 @@ export interface Foam extends IDisposable {
 export const bootstrap = async (
   matcher: IMatcher,
   dataStore: IDataStore,
+  parser: ResourceParser,
   initialProviders: ResourceProvider[]
 ) => {
-  const parser = createMarkdownParser([]);
   const workspace = new FoamWorkspace();
   const tsStart = Date.now();
 
@@ -34,7 +33,7 @@ export const bootstrap = async (
   const tsWsDone = Date.now();
   Logger.info(`Workspace loaded in ${tsWsDone - tsStart}ms`);
 
-  const graph = FoamGraph.fromWorkspace(workspace, true, 500);
+  const graph = FoamGraph.fromWorkspace(workspace, true);
   const tsGraphDone = Date.now();
   Logger.info(`Graph loaded in ${tsGraphDone - tsWsDone}ms`);
 

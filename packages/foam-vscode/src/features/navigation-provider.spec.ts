@@ -8,7 +8,7 @@ import {
   showInEditor,
 } from '../test/test-utils-vscode';
 import { NavigationProvider } from './navigation-provider';
-import { OPEN_COMMAND } from './utility-commands';
+import { OPEN_COMMAND } from './commands/open-resource';
 import { toVsCodeUri } from '../utils/vsc-utils';
 import { createMarkdownParser } from '../core/services/markdown-parser';
 import { FoamGraph } from '../core/model/graph';
@@ -124,8 +124,8 @@ describe('Document navigation', () => {
 
       expect(definitions.length).toEqual(1);
       expect(definitions[0].targetUri).toEqual(toVsCodeUri(fileA.uri));
-      // target the whole file
-      expect(definitions[0].targetRange).toEqual(new vscode.Range(0, 0, 0, 8));
+      // target the beginning of the file
+      expect(definitions[0].targetRange).toEqual(new vscode.Range(0, 0, 0, 0));
       // select nothing
       expect(definitions[0].targetSelectionRange).toEqual(
         new vscode.Range(0, 0, 0, 0)

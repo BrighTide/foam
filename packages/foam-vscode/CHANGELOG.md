@@ -4,6 +4,56 @@ All notable changes to the "foam-vscode" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.19.5] - 2022-09-01
+
+Fixes and Improvements:
+- Added `FOAM_DATE_WEEK` variable (#1053 - Thanks @dmurph)
+- Fixed extension inclusion when generating references for attachments
+- Link completion label can be note title as well as path (#1059)
+- Images and attachments are not shown by default in graph view (#1056)
+
+## [0.19.4] - 2022-08-07
+
+Fixes and Improvements:
+- Fixed note embed in preview (#1052)
+
+## [0.19.3] - 2022-08-04
+
+Fixes and Improvements:
+- Image embeds fixed in preview (#1036)
+
+## [0.19.2] - 2022-08-04
+
+Fixes and Improvements:
+- Added support for angle markdown links (#1044)
+- Filter out invalid file name chars when creating note (#1042)
+
+Internal:
+- Reorganized docs (#1031, thanks @infogulch)
+- Fixed documentation links (#1046)
+- Preview code refactoring
+
+## [0.19.1] - 2022-07-11
+
+Internal:
+- Introduced cache for markdown parser (#1030)
+- Various code refactorings
+
+## [0.19.0] - 2022-07-07
+
+New Features:
+- Support for attachments (PDF) and images (#1027)
+- Support for opening day notes for other days as well (#1026, thanks @alper)
+
+## [0.18.5] - 2022-06-29
+
+Fixes and Improvements:
+- Support for `alias` YAML property to define note alias (#1014 - thanks @lingyv-li)
+
+Internal:
+- Improved extension bundling (#1015 - thanks @lingyv-li)
+- Use `vscode.workspace.fs` instead of `fs` (#1005 - thanks @joshdover)
+
 ## [0.18.4] - 2022-06-03
 
 Fixes and Improvements:

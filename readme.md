@@ -5,7 +5,7 @@
 👀*This is an early stage project under rapid development. For updates join the [Foam community Discord](https://foambubble.github.io/join-discord/g)! 💬*
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-98-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-102-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Discord Chat](https://img.shields.io/discord/729975036148056075?color=748AD9&label=discord%20chat&style=flat-square)](https://foambubble.github.io/join-discord/g)
@@ -20,7 +20,7 @@ You can use **Foam** for organising your research, keeping re-discoverable notes
 
 ### Graph Visualization
 
-See how your notes are connected via a [graph](https://foambubble.github.io/foam/features/graph-visualisation) with the `Foam: Show Graph` command.
+See how your notes are connected via a [graph](https://foambubble.github.io/foam/user/features/graph-visualization) with the `Foam: Show Graph` command.
 
 ![Graph Visualization](./assets/screenshots/feature-show-graph.gif)
 
@@ -78,7 +78,7 @@ Foam supports link aliasing, so you can have a `[[wikilink]]`, or a `[[wikilink|
 
 ### Templates
 
-Use [custom templates](https://foambubble.github.io/foam/features/note-templates) to have avoid repetitve work on your notes.
+Use [custom templates](https://foambubble.github.io/foam/user/features/note-templates) to have avoid repetitve work on your notes.
 
 ![Templates](./assets/screenshots/feature-templates.gif)
 
@@ -91,7 +91,7 @@ See for each occurrence the context in which it lives, as well as a preview of t
 
 ### Tag Explorer Panel
 
-Tag your notes and navigate them with the [Tag Explorer](https://foambubble.github.io/foam/features/tags).
+Tag your notes and navigate them with the [Tag Explorer](https://foambubble.github.io/foam/user/features/tags).
 Foam also supports hierarchical tags.
 
 ![Tag Explorer Panel](./assets/screenshots/feature-tags-panel.gif)
@@ -112,13 +112,13 @@ Foam highlights wikilinks and placeholder differently, to help you visualize you
 
 ### Daily note
 
-Create a journal with [daily notes](https://foambubble.github.io/foam/features/daily-notes).
+Create a journal with [daily notes](https://foambubble.github.io/foam/user/features/daily-notes).
 
 ![Daily Note](./assets/screenshots/feature-daily-note.gif)
 
 ### Generate references for your wikilinks
 
-Create markdown [references](https://foambubble.github.io/foam/features/link-reference-definitions) for `[[wikilinks]]`, to use your notes in a non-Foam workspace.
+Create markdown [references](https://foambubble.github.io/foam/user/features/link-reference-definitions) for `[[wikilinks]]`, to use your notes in a non-Foam workspace.
 With references you can also make your notes navigable both in GitHub UI as well as GitHub Pages.
 
 ![Generate references](./assets/screenshots/feature-definitions-generation.gif)
@@ -128,12 +128,12 @@ With references you can also make your notes navigable both in GitHub UI as well
 - Explore your knowledge base with the `Foam: Open Random Note` command
 - Access your daily note with the `Foam: Open Daily Note` command
 - Create a new note with the `Foam: Create New Note` command
-  - This becomes very powerful when combined with [note templates](https://foambubble.github.io/foam/features/note-templates) and the `Foam: Create New Note from Template` command
+  - This becomes very powerful when combined with [note templates](https://foambubble.github.io/foam/user/features/note-templates) and the `Foam: Create New Note from Template` command
 - See your workspace as a connected graph with the `Foam: Show Graph` command
 
 ## Recipes
 
-People use Foam in different ways for different use cases, check out the [recipes](https://foambubble.github.io/foam/recipes/recipes) page for inspiration!
+People use Foam in different ways for different use cases, check out the [recipes](https://foambubble.github.io/foam/user/recipes/recipes) page for inspiration!
 
 ## Getting started
 
@@ -322,6 +322,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Lauviah0622"><img src="https://avatars.githubusercontent.com/u/43416399?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Lauviah0622</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=Lauviah0622" title="Code">💻</a></td>
     <td align="center"><a href="https://www.elastic.co/elastic-agent"><img src="https://avatars.githubusercontent.com/u/1813008?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Josh Dover</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=joshdover" title="Code">💻</a></td>
     <td align="center"><a href="http://phelm.co.uk"><img src="https://avatars.githubusercontent.com/u/4057948?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Phil Helm</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=phelma" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/lingyv-li"><img src="https://avatars.githubusercontent.com/u/8937944?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Larry Li</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=lingyv-li" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/infogulch"><img src="https://avatars.githubusercontent.com/u/133882?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Joe Taber</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=infogulch" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.readingsnail.pe.kr"><img src="https://avatars.githubusercontent.com/u/1904967?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Woosuk Park</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=readingsnail" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.dmurph.com"><img src="https://avatars.githubusercontent.com/u/294026?v=4?s=60" width="60px;" alt=""/><br /><sub><b>Daniel Murphy</b></sub></a><br /><a href="https://github.com/foambubble/foam/commits?author=dmurph" title="Code">💻</a></td>
   </tr>
 </table>
 

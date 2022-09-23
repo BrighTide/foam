@@ -1,13 +1,5 @@
 import { URI } from './uri';
-import { Position } from './position';
 import { Range } from './range';
-
-export interface NoteSource {
-  text: string;
-  contentStart: Position;
-  end: Position;
-  eol: string;
-}
 
 export interface ResourceLink {
   type: 'wikilink' | 'link';
@@ -27,6 +19,11 @@ export interface Tag {
   range: Range;
 }
 
+export interface Alias {
+  title: string;
+  range: Range;
+}
+
 export interface Section {
   label: string;
   range: Range;
@@ -39,11 +36,11 @@ export interface Resource {
   properties: any;
   sections: Section[];
   tags: Tag[];
+  aliases: Alias[];
   links: ResourceLink[];
 
   // TODO to remove
   definitions: NoteLinkDefinition[];
-  source: NoteSource;
 }
 
 export interface ResourceParser {
@@ -65,6 +62,7 @@ export abstract class Resource {
       typeof (thing as Resource).type === 'string' &&
       typeof (thing as Resource).properties === 'object' &&
       typeof (thing as Resource).tags === 'object' &&
+      typeof (thing as Resource).aliases === 'object' &&
       typeof (thing as Resource).links === 'object'
     );
   }

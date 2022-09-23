@@ -238,6 +238,35 @@ describe('Link resolution', () => {
       ws.set(noteA).set(noteB);
       expect(ws.resolveLink(noteA, noteA.links[0])).toEqual(noteB.uri);
     });
+
+    it('should support angle syntax #1039', () => {
+      const noteA = createNoteFromMarkdown(
+        'Content of note a',
+        '/path/to/note a.md'
+      );
+      const noteB = createNoteFromMarkdown(
+        'Link to [note](<./note a.md>)',
+        '/path/to/note b.md'
+      );
+      const noteC = createNoteFromMarkdown(
+        'Link to [note](./note%20a.md)',
+        '/path/to/note c.md'
+      );
+      const noteD = createNoteFromMarkdown(
+        'Link to [note](./note a.md)',
+        '/path/to/note d.md'
+      );
+
+      const ws = createTestWorkspace();
+      ws.set(noteA)
+        .set(noteB)
+        .set(noteC)
+        .set(noteD);
+
+      expect(ws.resolveLink(noteB, noteB.links[0])).toEqual(noteA.uri);
+      expect(ws.resolveLink(noteC, noteC.links[0])).toEqual(noteA.uri);
+      expect(noteD.links).toEqual([]);
+    });
   });
 });
 
@@ -270,6 +299,21 @@ describe('Generation of markdown references', () => {
 
     const references = createMarkdownReferences(workspace, noteA.uri, true);
     expect(references.map(r => r.url)).toEqual(['page-b.md', 'page-c.md']);
+  });
+
+  it('should always add extensions for attachments, even when includeExtension = false', () => {
+    const workspace = createTestWorkspace();
+    const noteA = createNoteFromMarkdown(
+      'Link to [[page-b]] and [[image.png]]',
+      '/dir1/page-a.md'
+    );
+    workspace
+      .set(noteA)
+      .set(createNoteFromMarkdown('Content of note B', '/dir1/page-b.md'))
+      .set(createNoteFromMarkdown('', '/dir1/image.png'));
+
+    const references = createMarkdownReferences(workspace, noteA.uri, false);
+    expect(references.map(r => r.url)).toEqual(['page-b', 'image.png']);
   });
 
   it('should use relative paths', () => {

@@ -150,10 +150,10 @@ export class FoamWorkspace implements IDisposable {
     );
   }
 
-  public read(uri: URI): Promise<string | null> {
+  public fetch(uri: URI): Promise<Resource | null> {
     for (const provider of this.providers) {
       if (provider.supports(uri)) {
-        return provider.read(uri);
+        return provider.fetch(uri);
       }
     }
     return Promise.resolve(null);
@@ -217,6 +217,16 @@ export class FoamWorkspace implements IDisposable {
       .join('/');
 
     return identifier;
+  }
+
+  static async fromProviders(
+    providers: ResourceProvider[]
+  ): Promise<FoamWorkspace> {
+    const workspace = new FoamWorkspace();
+    for (const provider of providers) {
+      await workspace.registerProvider(provider);
+    }
+    return workspace;
   }
 }
 
