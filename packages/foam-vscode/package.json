@@ -8,7 +8,7 @@
     "type": "git"
   },
   "homepage": "https://github.com/foambubble/foam",
-  "version": "0.19.9",
+  "version": "0.20.1",
   "license": "MIT",
   "publisher": "jfilmer",
   "engines": {
@@ -29,6 +29,7 @@
     "onCommand:foam-vscode.copy-without-brackets",
     "onCommand:foam-vscode.show-graph",
     "onCommand:foam-vscode.create-new-template",
+    "onCommand:foam-vscode.create-note",
     "onCommand:foam-vscode.create-note-from-template",
     "onCommand:foam-vscode.create-note-from-default-template"
   ],
@@ -129,6 +130,10 @@
       ],
       "commandPalette": [
         {
+          "command": "foam-vscode.create-note-from-default-template",
+          "when": "false"
+        },
+        {
           "command": "foam-vscode.update-graph",
           "when": "false"
         },
@@ -159,6 +164,10 @@
       ]
     },
     "commands": [
+      {
+        "command": "foam-vscode.create-note",
+        "title": "Foam: Create Note"
+      },
       {
         "command": "foam-vscode.clear-cache",
         "title": "Foam: Clear Cache"
@@ -201,7 +210,7 @@
       },
       {
         "command": "foam-vscode.create-note-from-template",
-        "title": "Foam: Create New Note From Template"
+        "title": "Foam: Create Note From Template"
       },
       {
         "command": "foam-vscode.create-note-from-default-template",
@@ -282,6 +291,11 @@
             "**/node_modules/**/*"
           ],
           "description": "Specifies the list of globs that will be ignored by Foam (e.g. they will not be considered when creating the graph). To ignore the all the content of a given folder, use `<folderName>/**/*`"
+        },
+        "foam.files.attachmentExtensions": {
+          "type": "string",
+          "default": "pdf mp3 webm wav m4a mp4 avi mov rtf txt doc docx pages xls xlsx numbers ppt pptm pptx",
+          "description": "Space separated list of file extensions that will be considered attachments"
         },
         "foam.logging.level": {
           "type": "string",
